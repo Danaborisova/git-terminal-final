@@ -4,14 +4,14 @@ const mainRoute = require('./routes/main');
 const gamesRouter = require('./routes/games');
 const path = require('path');
 const bodyParser = require('body-parser');
-//const cors = require('./middlewares/cors');
+const cors = require('./middlewares/cors');
 
 // Слушаем порт 3000
 const PORT = 3000;
 const app = express();
 
 app.use(
-    //cors,
+    cors,
     bodyParser.json(),
     express.static(path.join(__dirname, 'public')),
     mainRoute,
